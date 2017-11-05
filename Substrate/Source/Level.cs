@@ -976,7 +976,6 @@ namespace Substrate
         public virtual Level LoadTreeSafe (TagNode tree)
         {
             if (!ValidateTree(tree)) {
-                // returns null!
                 return null;
             }
 

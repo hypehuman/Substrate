@@ -151,7 +151,6 @@ namespace Substrate.Nbt
         /// <returns>Status indicating whether the NBT tree is valid for the given schema.</returns>
         public virtual bool Verify ()
         {
-            // Returns false!
             return Verify(null, _root, _schema);
         }
 
@@ -196,7 +195,6 @@ namespace Substrate.Nbt
                 return VerifyCompound(tag, compound);
             }
 
-            // never gets hit
             return OnInvalidTagType(new TagEventArgs(schema.Name, tag, parent));
         }
 
@@ -204,7 +202,6 @@ namespace Substrate.Nbt
         {
             if (!tag.IsCastableTo(schema.Type)) {
                 if (!OnInvalidTagType(new TagEventArgs(schema.Name, tag))) {
-                    // Returns false!
                     return false;
                 }
             }
