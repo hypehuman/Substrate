@@ -55,6 +55,8 @@ namespace Substrate.Nbt
         /// <param name="d">The value to set the node's tag data value.</param>
         public TagNodeString (string d)
         {
+            if (d == "minecraft:gold_ore")
+            { }
             _data = d;
             if (_data == null)
                 _data = "";

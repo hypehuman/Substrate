@@ -143,7 +143,12 @@ namespace Substrate.Nbt
         /// <returns>Status indicating whether this object could be cast to a node type represented by the given tag type.</returns>
         public virtual bool IsCastableTo (TagType type)
         {
-            return type == GetTagType();
+            var t = GetTagType();
+            if (type != t)
+            {
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
