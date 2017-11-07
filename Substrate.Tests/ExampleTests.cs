@@ -21,8 +21,15 @@ namespace Substrate.Tests
             var chunkManager = world.GetChunkManager();
             int numChunks = chunkManager.Count();
             System.Diagnostics.Debug.WriteLine("Num chunks: " + numChunks);
+            int i = 0;
             foreach (ChunkRef chunk in chunkManager)
             {
+                i++;
+                System.Diagnostics.Debug.WriteLine($"Chunk {i} of {numChunks}");
+                if (i != 1477)
+                {
+                    //continue; //uncomment to see the exception more quickly
+                }
                 // Process Chunk
                 for (int y = 0; y <= 127; y++)
                 {
